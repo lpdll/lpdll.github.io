@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>next不蒜子配置修改</title>
+      <link href="2021/04/23/next-busuanzi/"/>
+      <url>2021/04/23/next-busuanzi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="next配置不蒜子统计访问量不生效"><a href="#next配置不蒜子统计访问量不生效" class="headerlink" title="next配置不蒜子统计访问量不生效"></a>next配置不蒜子统计访问量不生效</h2><ul><li>不生效原因，由于<a href="http://busuanzi.ibruce.info/">不蒜子</a>修改域名，next用的还是以前的域名，导致统计引入js脚本报错<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=<span class="string">&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li><li>修改后引入脚本<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=<span class="string">&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> next配置 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test</title>
       <link href="2021/04/23/test/"/>
       <url>2021/04/23/test/</url>
@@ -13,7 +32,7 @@
       
       <categories>
           
-          <category> 电影评论 </category>
+          <category> test </category>
           
       </categories>
       
