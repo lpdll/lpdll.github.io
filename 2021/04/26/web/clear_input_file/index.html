@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="JS清空input[type&#x3D;file]的值js 不能操作 input[type&#x3D;file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉 1$(&quot;#UploadFile&quot;).replaceWith(&amp;#x27;&lt;input id&#x3D;&quot;UploadFile&quot; type&#x3D;&quot;file&quot;&#x2F;&gt;&amp;#x27;);">
+<meta name="description" content="js 不能操作 input[type&#x3D;file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉 1$(&quot;#UploadFile&quot;).replaceWith(&amp;#x27;&lt;input id&#x3D;&quot;UploadFile&quot; type&#x3D;&quot;file&quot;&#x2F;&gt;&amp;#x27;);  替换input框之后 input[typ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="form表单提交后重置表单失效解决">
+<meta property="og:title" content="JS清空input[type&#x3D;file]的值">
 <meta property="og:url" content="https://lpdll.github.io/2021/04/26/web/clear_input_file/index.html">
 <meta property="og:site_name" content="日常小馆">
-<meta property="og:description" content="JS清空input[type&#x3D;file]的值js 不能操作 input[type&#x3D;file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉 1$(&quot;#UploadFile&quot;).replaceWith(&amp;#x27;&lt;input id&#x3D;&quot;UploadFile&quot; type&#x3D;&quot;file&quot;&#x2F;&gt;&amp;#x27;);">
+<meta property="og:description" content="js 不能操作 input[type&#x3D;file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉 1$(&quot;#UploadFile&quot;).replaceWith(&amp;#x27;&lt;input id&#x3D;&quot;UploadFile&quot; type&#x3D;&quot;file&quot;&#x2F;&gt;&amp;#x27;);  替换input框之后 input[typ">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-26T02:32:11.000Z">
-<meta property="article:modified_time" content="2021-04-26T03:57:57.484Z">
+<meta property="article:modified_time" content="2021-04-26T09:24:30.025Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>form表单提交后重置表单失效解决 | 日常小馆</title>
+  <title>JS清空input[type=file]的值 | 日常小馆</title>
   
 
 
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">form表单提交后重置表单失效解决</h1>
+          <h1 class="post-title" itemprop="name headline">JS清空input[type=file]的值</h1>
         
 
         <div class="post-meta">
@@ -369,8 +369,11 @@
       
 
       
-        <h3 id="JS清空input-type-file-的值"><a href="#JS清空input-type-file-的值" class="headerlink" title="JS清空input[type=file]的值"></a>JS清空input[type=file]的值</h3><p>js 不能操作 input[type=file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉</p>
+        <p>js 不能操作 input[type=file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#UploadFile&quot;</span>).replaceWith(<span class="string">&#x27;&lt;input id=&quot;UploadFile&quot; type=&quot;file&quot;/&gt;&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>替换input框之后 input[type=file] 如果不是使用delegate绑定的事件，那么原本绑定的事件就会失效。<br>delegate() 方法为指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。<br>使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).delegate(<span class="string">&quot;#UploadFile&quot;</span>,<span class="string">&quot;change&quot;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -390,7 +393,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lpdll.github.io/2021/04/26/web/clear_input_file/" title="form表单提交后重置表单失效解决">https://lpdll.github.io/2021/04/26/web/clear_input_file/</a>
+    <a href="https://lpdll.github.io/2021/04/26/web/clear_input_file/" title="JS清空input[type=file]的值">https://lpdll.github.io/2021/04/26/web/clear_input_file/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -472,17 +475,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -533,22 +527,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS%E6%B8%85%E7%A9%BAinput-type-file-%E7%9A%84%E5%80%BC"><span class="nav-number">1.</span> <span class="nav-text">JS清空input[type&#x3D;file]的值</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
