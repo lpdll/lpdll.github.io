@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>mac下修改docker国内镜像</title>
+      <link href="2021/04/27/registry_mirrors/"/>
+      <url>2021/04/27/registry_mirrors/</url>
+      
+        <content type="html"><![CDATA[<h3 id="修改国内镜像"><a href="#修改国内镜像" class="headerlink" title="修改国内镜像"></a>修改国内镜像</h3><p>docker =&gt; Preferences<br><img src="/2021/04/27/registry_mirrors/preferences.png"><br>docker Engine 编辑配置文件<br><img src="/2021/04/27/registry_mirrors/dockerEngine.png"></p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&quot;registry-mirrors&quot;: [</span><br><span class="line">   &quot;https://md4nbj2f.mirror.aliyuncs.com&quot;,</span><br><span class="line">   &quot;https://docker.mirrors.ustc.edu.cn&quot;,</span><br><span class="line">   <span class="string">&quot;https://hub-mirror.c.163.com&quot;</span></span><br><span class="line"> ]</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>点击Apply &amp; Restart按钮</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> docker </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS清空input[type=file]的值</title>
       <link href="2021/04/26/web/clear_input_file/"/>
       <url>2021/04/26/web/clear_input_file/</url>
