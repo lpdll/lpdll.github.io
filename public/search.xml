@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>字符串的二进制安全</title>
+      <link href="2021/05/07/php_string_safe/"/>
+      <url>2021/05/07/php_string_safe/</url>
+      
+        <content type="html"><![CDATA[<h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>PHP在处理带二进制字符的字符串时，程序不会对其中的数据做任何限制、过滤或者假设，数据在写入时是什么样的，它被读取是就是什么样，这种能力称为字符串的二进制安全<br><br/></p><h4 id="举例说明："><a href="#举例说明：" class="headerlink" title="举例说明："></a>举例说明：</h4><ul><li><p>C代码如下：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;</span><br><span class="line">    <span class="keyword">char</span> a[] = <span class="string">&quot;aaa\0b&quot;</span>; <span class="comment">/*带有二进制数据的字符串*/</span></span><br><span class="line">    <span class="keyword">char</span> b[] = <span class="string">&quot;aaa\0c&quot;</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">strcmp</span>(a,b)); <span class="comment">/*输出0*/</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,<span class="built_in">strlen</span>(b));<span class="comment">/*输出3*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>C认为a和b这两个变量的值相等，b的长度为3；</p></li><li><p>PHP代码如下：</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="variable">$a</span> = <span class="string">&quot;aaa\0b&quot;</span>;<span class="comment">/*带有二进制数据的字符串*/</span></span><br><span class="line"><span class="variable">$b</span> = <span class="string">&quot;bbb\0c&quot;</span>;</span><br><span class="line">var_dump(strcmp(<span class="variable">$b</span>,<span class="variable">$a</span>)); <span class="comment">/*输出1*/</span></span><br><span class="line">var_dump(strlen(<span class="variable">$b</span>));<span class="comment">/*输出5*/</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><p>PHP认为a和b这两个变量的值不相等，且b的长度是5</p><br>对于C语言来说，"\0"就是字符串的结束，当读取字符串"aaa\0b"时，读到"\0"就会默认字符串读取已经结束<br>对于PHP7来说，其通过zend_string结构体对字符串重新封装，读取的数据长度以自身结构体len值为准，保证了字符串读写的二进制安全</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> php </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mac下修改docker国内镜像</title>
       <link href="2021/04/27/registry_mirrors/"/>
       <url>2021/04/27/registry_mirrors/</url>
@@ -14,6 +33,25 @@
       <categories>
           
           <category> docker </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JS清空input[type=file]的值</title>
+      <link href="2021/04/26/web/clear_input_file/"/>
+      <url>2021/04/26/web/clear_input_file/</url>
+      
+        <content type="html"><![CDATA[<p>js 不能操作 input[type=file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#UploadFile&quot;</span>).replaceWith(<span class="string">&#x27;&lt;input id=&quot;UploadFile&quot; type=&quot;file&quot;/&gt;&#x27;</span>);</span><br></pre></td></tr></table></figure><p>替换input框之后 input[type=file] 如果不是使用delegate绑定的事件，那么原本绑定的事件就会失效。<br>delegate() 方法为指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。<br>使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).delegate(<span class="string">&quot;#UploadFile&quot;</span>,<span class="string">&quot;change&quot;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端相关 </category>
           
       </categories>
       
@@ -47,25 +85,6 @@
       <url>2021/04/26/web/js_url_read_update/</url>
       
         <content type="html"><![CDATA[<h3 id="读取url的某个参数"><a href="#读取url的某个参数" class="headerlink" title="读取url的某个参数"></a>读取url的某个参数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取URL参数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetQueryString</span>(<span class="params">name</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&quot;(^|&amp;)&quot;</span> + name + <span class="string">&quot;=([^&amp;]*)(&amp;|$)&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">    <span class="keyword">if</span> (r != <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">unescape</span>(r[<span class="number">2</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="修改url的某个参数"><a href="#修改url的某个参数" class="headerlink" title="修改url的某个参数"></a>修改url的某个参数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//替换指定传入参数的值,paramName为参数,replaceWith为新值,并跳转</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">replaceParamVal</span>(<span class="params">paramName,replaceWith</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oUrl = <span class="built_in">this</span>.location.href.toString();</span><br><span class="line">    <span class="keyword">var</span> re=<span class="built_in">eval</span>(<span class="string">&#x27;/(&#x27;</span>+ paramName+<span class="string">&#x27;=)([^&amp;]*)/gi&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> nUrl = oUrl.replace(re,paramName+<span class="string">&#x27;=&#x27;</span>+replaceWith);</span><br><span class="line">    <span class="built_in">this</span>.location = nUrl;</span><br><span class="line">　　<span class="built_in">window</span>.location.href=nUrl</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>例如url为：<a href="http://xxxx.cn/pc/meeting/card.html?userId=566&amp;modid=1133&amp;puid=9">http://xxxx.cn/pc/meeting/card.html?userId=566&amp;modid=1133&amp;puid=9</a><br>如果希望修改userId的值为333，那么调用方法：replaceParamVal(“userId”,”333”)<br>URL就会变成：<a href="http://xxx.cn/pc/meeting/card.html?userId=333">http://xxx.cn/pc/meeting/card.html?userId=333</a><br>然后自动跳转到新的url。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端相关 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>JS清空input[type=file]的值</title>
-      <link href="2021/04/26/web/clear_input_file/"/>
-      <url>2021/04/26/web/clear_input_file/</url>
-      
-        <content type="html"><![CDATA[<p>js 不能操作 input[type=file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#UploadFile&quot;</span>).replaceWith(<span class="string">&#x27;&lt;input id=&quot;UploadFile&quot; type=&quot;file&quot;/&gt;&#x27;</span>);</span><br></pre></td></tr></table></figure><p>替换input框之后 input[type=file] 如果不是使用delegate绑定的事件，那么原本绑定的事件就会失效。<br>delegate() 方法为指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。<br>使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).delegate(<span class="string">&quot;#UploadFile&quot;</span>,<span class="string">&quot;change&quot;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
