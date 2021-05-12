@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>filebeat+logstash收集json格式的日志</title>
+      <link href="2021/05/12/elk_filebeat_logstash/"/>
+      <url>2021/05/12/elk_filebeat_logstash/</url>
+      
+        <content type="html"><![CDATA[<h3 id="配置logstash"><a href="#配置logstash" class="headerlink" title="配置logstash"></a>配置logstash</h3><p>创建一个first-pipeline.conf文件，配置以下内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">  beats &#123;</span><br><span class="line">     host &#x3D;&gt; &quot;127.0.0.1&quot;</span><br><span class="line">     port &#x3D;&gt; 5044</span><br><span class="line">     type &#x3D;&gt; &quot;log4j&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"># The filter part of this file is commented out to indicate that it is</span><br><span class="line"># optional.</span><br><span class="line"> filter &#123;</span><br><span class="line"> &#125;</span><br><span class="line"> #控制台打印，便于调试和观察</span><br><span class="line">output &#123;</span><br><span class="line">   stdout &#123; codec &#x3D;&gt; rubydebug &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>执行下面命令查看配置是否有问题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;logstash -f first-pipeline.conf --config.test_and_exit</span><br></pre></td></tr></table></figure><p>看到有显示Configuration OK，标识配置没有问题，一些WARN的错误可以直接无视<br><br><br>执行下面代码启动logstash</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin&#x2F;logstash -f first-pipeline.conf --config.reload.automatic</span><br></pre></td></tr></table></figure><h3 id="配置filebeat"><a href="#配置filebeat" class="headerlink" title="配置filebeat"></a>配置filebeat</h3><p>filebeat.yml——修改两个地方：input和output</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">filebeat.inputs:</span><br><span class="line">- type: log</span><br><span class="line">  enabled: true</span><br><span class="line">#日志存放的路径，从根目录开始</span><br><span class="line">  paths: </span><br><span class="line">    - &#x2F;var&#x2F;log&#x2F;*log</span><br><span class="line">  json.keys_under_root: true</span><br><span class="line">  json.overwrite_keys: true</span><br><span class="line">#这里ip地址和端口填安装logstash的主机ip和对应logstash开放端口</span><br><span class="line">output.logstash:</span><br><span class="line">  hosts: [&quot;localhost:5044&quot;]</span><br></pre></td></tr></table></figure><p>直接修改filebeat.yml文件有可能不生效，可以把原文件修改文件名然后自己重新创建filebeat.yml文件<br><br><br>配置完成后运行下面代码启动filebeat</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">filebeat -e -c filebeat.yml -d &quot;Publish&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> ELK </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo在文章中添加图片</title>
       <link href="2021/05/07/hexo_quote_image/"/>
       <url>2021/05/07/hexo_quote_image/</url>
