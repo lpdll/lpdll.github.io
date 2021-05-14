@@ -99,6 +99,25 @@
     
     
     <entry>
+      <title>form表单提交后重置表单失效解决</title>
+      <link href="2021/04/26/web/reset_form_after_submit/"/>
+      <url>2021/04/26/web/reset_form_after_submit/</url>
+      
+        <content type="html"><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>页面内提供了数据查询功能，查询字段为姓名和手机号，提交查询请求之后，重置按钮失效；但是在查询之前执行重置的话是可行的。</p><h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>type=”reset”的input标签，点击后只是重置到默认值，这就很好解释了为什么不点击查询按钮可以重置表单数据为空，<br>而在点击了查询(submit类型)按钮之后，表单各数据内容就等于有值了，所以点击重置不能达到预期重置表单数据为空的目的。</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;form&quot;</span>).on(<span class="string">&quot;click&quot;</span>, <span class="string">&quot;button[type=&#x27;reset&#x27;]&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//清空所有type为text的值</span></span><br><span class="line">    <span class="keyword">var</span> $inputs = $(<span class="string">&quot;form&quot;</span>).find(<span class="string">&quot;input[type=&#x27;text&#x27;]&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; $inputs.length;i++)&#123;</span><br><span class="line">        $($inputs[i]).val(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//清空select框的值</span></span><br><span class="line">    $(<span class="string">&quot;#channelHtml&quot;</span>).val(<span class="string">&quot;&quot;</span>).trigger(<span class="string">&#x27;change&#x27;</span>);<span class="comment">//下拉框重置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端相关 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>js读取或修改url中的参数</title>
       <link href="2021/04/26/web/js_url_read_update/"/>
       <url>2021/04/26/web/js_url_read_update/</url>
@@ -123,25 +142,6 @@
       <url>2021/04/26/web/clear_input_file/</url>
       
         <content type="html"><![CDATA[<p>js 不能操作 input[type=file]，但可以将这个 input 的 dom 元素删除掉,再新增一个，或者替换掉</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;#UploadFile&quot;</span>).replaceWith(<span class="string">&#x27;&lt;input id=&quot;UploadFile&quot; type=&quot;file&quot;/&gt;&#x27;</span>);</span><br></pre></td></tr></table></figure><p>替换input框之后 input[type=file] 如果不是使用delegate绑定的事件，那么原本绑定的事件就会失效。<br>delegate() 方法为指定的元素（属于被选元素的子元素）添加一个或多个事件处理程序，并规定当这些事件发生时运行的函数。<br>使用 delegate() 方法的事件处理程序适用于当前或未来的元素（比如由脚本创建的新元素）。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).delegate(<span class="string">&quot;#UploadFile&quot;</span>,<span class="string">&quot;change&quot;</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 前端相关 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>form表单提交后重置表单失效解决</title>
-      <link href="2021/04/26/web/reset_form_after_submit/"/>
-      <url>2021/04/26/web/reset_form_after_submit/</url>
-      
-        <content type="html"><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>页面内提供了数据查询功能，查询字段为姓名和手机号，提交查询请求之后，重置按钮失效；但是在查询之前执行重置的话是可行的。</p><h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>type=”reset”的input标签，点击后只是重置到默认值，这就很好解释了为什么不点击查询按钮可以重置表单数据为空，<br>而在点击了查询(submit类型)按钮之后，表单各数据内容就等于有值了，所以点击重置不能达到预期重置表单数据为空的目的。</p><h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">&quot;form&quot;</span>).on(<span class="string">&quot;click&quot;</span>, <span class="string">&quot;button[type=&#x27;reset&#x27;]&quot;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//清空所有type为text的值</span></span><br><span class="line">    <span class="keyword">var</span> $inputs = $(<span class="string">&quot;form&quot;</span>).find(<span class="string">&quot;input[type=&#x27;text&#x27;]&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; $inputs.length;i++)&#123;</span><br><span class="line">        $($inputs[i]).val(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//清空select框的值</span></span><br><span class="line">    $(<span class="string">&quot;#channelHtml&quot;</span>).val(<span class="string">&quot;&quot;</span>).trigger(<span class="string">&#x27;change&#x27;</span>);<span class="comment">//下拉框重置</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
