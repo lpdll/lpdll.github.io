@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>yii2 composer install 出错的解决方法</title>
-      <link href="2021/05/13/composer_yii2/"/>
-      <url>2021/05/13/composer_yii2/</url>
-      
-        <content type="html"><![CDATA[<p>下载yii2报下面错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your requirements could not be resolved to an installable set of packages.</span><br></pre></td></tr></table></figure><p>经查找需要全局安装fxp/composer-asset-plugin。<br><br><br>使用下面命令下载包</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer global require <span class="string">&quot;fxp/composer-asset-plugin:^1.4.1&quot;</span></span><br></pre></td></tr></table></figure><p>报下面错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Package fxp&#x2F;composer-asset-plugin has a PHP requirement incomp   atible with your PHP version, PHP extensions and Composer vers   ion</span><br></pre></td></tr></table></figure><p>解决方法：<br><br><br>将composer降级</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer self-update --1</span><br></pre></td></tr></table></figure><p>再执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer global require <span class="string">&quot;fxp/composer-asset-plugin:^1.4.1&quot;</span></span><br></pre></td></tr></table></figure><p>再将composer的版本升回来</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer self-update</span><br></pre></td></tr></table></figure><p>即可</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> yii2 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>elasticsearch 7 添加用户名密码认证</title>
       <link href="2021/05/13/elasticsearch_password/"/>
       <url>2021/05/13/elasticsearch_password/</url>
@@ -33,6 +14,25 @@
       <categories>
           
           <category> elasticsearch </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>yii2 composer install 出错的解决方法</title>
+      <link href="2021/05/13/composer_yii2/"/>
+      <url>2021/05/13/composer_yii2/</url>
+      
+        <content type="html"><![CDATA[<p>下载yii2报下面错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Your requirements could not be resolved to an installable set of packages.</span><br></pre></td></tr></table></figure><p>经查找需要全局安装fxp/composer-asset-plugin。<br><br><br>使用下面命令下载包</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer global require <span class="string">&quot;fxp/composer-asset-plugin:^1.4.1&quot;</span></span><br></pre></td></tr></table></figure><p>报下面错误</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Package fxp&#x2F;composer-asset-plugin has a PHP requirement incomp   atible with your PHP version, PHP extensions and Composer vers   ion</span><br></pre></td></tr></table></figure><p>解决方法：<br><br><br>将composer降级</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer self-update --1</span><br></pre></td></tr></table></figure><p>再执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer global require <span class="string">&quot;fxp/composer-asset-plugin:^1.4.1&quot;</span></span><br></pre></td></tr></table></figure><p>再将composer的版本升回来</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer self-update</span><br></pre></td></tr></table></figure><p>即可</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> yii2 </category>
           
       </categories>
       
