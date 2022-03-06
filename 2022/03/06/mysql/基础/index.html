@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="hexo 添加图片插件安装图片插件 1npm install hexo-asset-image --save 在_config.yml配置文件中，修改为 post_asset_folder: true， 然后新建一篇文章 1hexo new post ceshi 这个时候会出现一个ceshi.md 和 ceshi的文件夹文件夹中放入要展示的图片文件,使用macdown语法就可以在文章中引用 1[t">
+<meta name="description" content="基础操作1. 进入mysqlmysql -u root -p 2. 查看有哪些数据库SHOW DATABASES [LIKE &#39;数据库名&#39;];  LIKE 从句是可选项，用于匹配指定的数据库名称。LIKE 从句可以部分匹配，也可以完全匹配。 数据库名由单引号’ ‘包围。  3. 创建数据库123CREATE DATABASE [IF NOT EXISTS] &lt;数据库名&gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo在文章中添加图片">
-<meta property="og:url" content="https://lpdll.github.io/2021/05/07/hexo_quote_image/index.html">
+<meta property="og:title" content="Mysql基本操作">
+<meta property="og:url" content="https://lpdll.github.io/2022/03/06/mysql/%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="日常小馆">
-<meta property="og:description" content="hexo 添加图片插件安装图片插件 1npm install hexo-asset-image --save 在_config.yml配置文件中，修改为 post_asset_folder: true， 然后新建一篇文章 1hexo new post ceshi 这个时候会出现一个ceshi.md 和 ceshi的文件夹文件夹中放入要展示的图片文件,使用macdown语法就可以在文章中引用 1[t">
+<meta property="og:description" content="基础操作1. 进入mysqlmysql -u root -p 2. 查看有哪些数据库SHOW DATABASES [LIKE &#39;数据库名&#39;];  LIKE 从句是可选项，用于匹配指定的数据库名称。LIKE 从句可以部分匹配，也可以完全匹配。 数据库名由单引号’ ‘包围。  3. 创建数据库123CREATE DATABASE [IF NOT EXISTS] &lt;数据库名&gt;">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-05-07T15:06:51.000Z">
-<meta property="article:modified_time" content="2021-05-07T15:12:59.277Z">
+<meta property="article:published_time" content="2022-03-06T09:17:14.000Z">
+<meta property="article:modified_time" content="2022-03-06T09:17:55.222Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://lpdll.github.io/2021/05/07/hexo_quote_image/"/>
+  <link rel="canonical" href="https://lpdll.github.io/2022/03/06/mysql/基础/"/>
 
 
 
 
 
-  <title>hexo在文章中添加图片 | 日常小馆</title>
+  <title>Mysql基本操作 | 日常小馆</title>
   
 
 
@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lpdll.github.io/2021/05/07/hexo_quote_image/">
+    <link itemprop="mainEntityOfPage" href="https://lpdll.github.io/2022/03/06/mysql/%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -292,7 +292,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo在文章中添加图片</h1>
+          <h1 class="post-title" itemprop="name headline">Mysql基本操作</h1>
         
 
         <div class="post-meta">
@@ -304,8 +304,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-05-07T23:06:51+08:00">
-                2021-05-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-06T17:17:14+08:00">
+                2022-03-06
               </time>
             
 
@@ -327,8 +327,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/Mysql%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
+                    <span itemprop="name">Mysql学习</span>
                   </a>
                 </span>
 
@@ -369,12 +369,128 @@
       
 
       
-        <h3 id="hexo-添加图片插件"><a href="#hexo-添加图片插件" class="headerlink" title="hexo 添加图片插件"></a>hexo 添加图片插件</h3><p>安装图片插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-<p>在_config.yml配置文件中，修改为 post_asset_folder: true， 然后新建一篇文章</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post ceshi</span><br></pre></td></tr></table></figure>
-<p>这个时候会出现一个ceshi.md 和 ceshi的文件夹<br><br>文件夹中放入要展示的图片文件,使用macdown语法就可以在文章中引用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[test](1.jpg)</span><br></pre></td></tr></table></figure>
+        <h4 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h4><h4 id="1-进入mysql"><a href="#1-进入mysql" class="headerlink" title="1. 进入mysql"></a>1. 进入mysql</h4><p><code>mysql -u root -p</code></p>
+<h4 id="2-查看有哪些数据库"><a href="#2-查看有哪些数据库" class="headerlink" title="2. 查看有哪些数据库"></a>2. 查看有哪些数据库</h4><p><code>SHOW DATABASES [LIKE &#39;数据库名&#39;];</code></p>
+<ul>
+<li>LIKE 从句是可选项，用于匹配指定的数据库名称。LIKE 从句可以部分匹配，也可以完全匹配。</li>
+<li>数据库名由单引号’ ‘包围。</li>
+</ul>
+<h4 id="3-创建数据库"><a href="#3-创建数据库" class="headerlink" title="3. 创建数据库"></a>3. 创建数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE [IF NOT EXISTS] &lt;数据库名&gt;</span><br><span class="line">[[DEFAULT] CHARACTER SET &lt;字符集名&gt;] </span><br><span class="line">[[DEFAULT] COLLATE &lt;校对规则名&gt;];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&lt;数据库名&gt;：创建数据库的名称。MySQL 的数据存储区将以目录方式表示 MySQL 数据库，因此数据库名称必须符合操作系统的文件夹命名规则，不能以数字开头，尽量要有实际意义。注意在 MySQL 中不区分大小写。</li>
+<li>IF NOT EXISTS：在创建数据库之前进行判断，只有该数据库目前尚不存在时才能执行操作。此选项可以用来避免数据库已经存在而重复创建的错误。</li>
+<li>[DEFAULT] CHARACTER SET：指定数据库的字符集。指定字符集的目的是为了避免在数据库中存储的数据出现乱码的情况。如果在创建数据库时不指定字符集，那么就使用系统的默认字符集。</li>
+<li>[DEFAULT] COLLATE：指定字符集的默认校对规则。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE &#96;test_local2&#96; DEFAULT CHARACTER SET &#x3D; &#96;utf8&#96; DEFAULT COLLATE &#x3D; &#96;utf8_general_ci&#96;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-修改数据库"><a href="#4-修改数据库" class="headerlink" title="4. 修改数据库"></a>4. 修改数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE [数据库名] &#123; </span><br><span class="line">[ DEFAULT ] CHARACTER SET &lt;字符集名&gt; |</span><br><span class="line">[ DEFAULT ] COLLATE &lt;校对规则名&gt;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ALTER DATABASE 用于更改数据库的全局特性。</li>
+<li>使用 ALTER DATABASE 需要获得数据库 ALTER 权限。</li>
+<li>数据库名称可以忽略，此时语句对应于默认数据库。</li>
+<li>CHARACTER SET 子句用于更改默认的数据库字符集。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER DATABASE test_db</span><br><span class="line"> DEFAULT CHARACTER SET gb2312</span><br><span class="line"> DEFAULT COLLATE gb2312_chinese_ci;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-删除数据库"><a href="#5-删除数据库" class="headerlink" title="5.删除数据库"></a>5.删除数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP DATABASE [ IF EXISTS ] &lt;数据库名&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>&lt;数据库名&gt;：指定要删除的数据库名。</li>
+<li>IF EXISTS：用于防止当数据库不存在时发生错误。</li>
+<li>DROP DATABASE：删除数据库中的所有表格并同时删除数据库。使用此语句时要非常小心，以免错误删除。如果要使用 DROP DATABASE，需要获得数据库 DROP 权限。</li>
+</ul>
+<h4 id="6-选择数据库"><a href="#6-选择数据库" class="headerlink" title="6. 选择数据库"></a>6. 选择数据库</h4><p><code>use &lt;数据库名&gt;</code></p>
+<h4 id="7-查看有哪些表"><a href="#7-查看有哪些表" class="headerlink" title="7. 查看有哪些表"></a>7. 查看有哪些表</h4><p><code>show tables</code></p>
+<h4 id="8-创建表"><a href="#8-创建表" class="headerlink" title="8. 创建表"></a>8. 创建表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &lt;表名&gt; ([表定义选项])[表选项][分区选项];</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE &#96;yii2_ad&#96; (</span><br><span class="line">  &#96;id&#96; int(8) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  &#96;type&#96; tinyint(3) NOT NULL COMMENT &#39;类型&#39;,</span><br><span class="line">  &#96;title&#96; varchar(50) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;标题&#39;,</span><br><span class="line">  &#96;image&#96; varchar(255) NOT NULL COMMENT &#39;图片路径&#39;,</span><br><span class="line">  &#96;url&#96; varchar(255) NOT NULL DEFAULT &#39;&#39; COMMENT &#39;跳转地址&#39;,</span><br><span class="line">  &#96;sort&#96; int(5) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;排序&#39;,</span><br><span class="line">  &#96;create_time&#96; int(10) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;创建时间&#39;,</span><br><span class="line">  &#96;update_time&#96; int(10) NOT NULL DEFAULT &#39;0&#39; COMMENT &#39;更新时间&#39;,</span><br><span class="line">  &#96;status&#96; tinyint(1) NOT NULL DEFAULT &#39;1&#39; COMMENT &#39;状态&#39;,</span><br><span class="line">  PRIMARY KEY (&#96;id&#96;)</span><br><span class="line">) ENGINE&#x3D;InnoDB AUTO_INCREMENT&#x3D;2 DEFAULT CHARSET&#x3D;utf8 ROW_FORMAT&#x3D;DYNAMIC COMMENT&#x3D;&#39;图片广告&#39;;</span><br></pre></td></tr></table></figure>
+<h4 id="9-查看表结构"><a href="#9-查看表结构" class="headerlink" title="9. 查看表结构"></a>9. 查看表结构</h4><h5 id="1-表格形式展现表结构"><a href="#1-表格形式展现表结构" class="headerlink" title="1) 表格形式展现表结构"></a><em>1) 表格形式展现表结构</em></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESCRIBE &lt;表名&gt;;</span><br></pre></td></tr></table></figure>
+<p>或：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC &lt;表名&gt;;</span><br></pre></td></tr></table></figure>
+<p>字段的含义如下：</p>
+<ul>
+<li>Field：表字段</li>
+<li>Type：各字段数据类型</li>
+<li>Null：表示该列是否可以存储 NULL 值。</li>
+<li>Key：表示该列是否已编制索引。PRI 表示该列是表主键的一部分，UNI 表示该列是 UNIQUE 索引的一部分，MUL 表示在列中某个给定值允许出现多次。</li>
+<li>Default：表示该列是否有默认值，如果有，值是多少。</li>
+<li>Extra：表示可以获取的与给定列有关的附加信息，如 AUTO_INCREMENT 等。</li>
+</ul>
+<h5 id="1-以SQL语句的形式展示表结构"><a href="#1-以SQL语句的形式展示表结构" class="headerlink" title="1) 以SQL语句的形式展示表结构"></a><em>1) 以SQL语句的形式展示表结构</em></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW CREATE TABLE &lt;表名&gt;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在 SHOW CREATE TABLE 语句的结尾处（分号前面）添加\g或者\G参数可以改变展示形式。</li>
+</ul>
+<h4 id="10-修改表"><a href="#10-修改表" class="headerlink" title="10. 修改表"></a>10. 修改表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;表名&gt; [修改选项]</span><br></pre></td></tr></table></figure>
+
+<p>修改项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123; ADD COLUMN &lt;列名&gt; &lt;类型&gt;</span><br><span class="line">| CHANGE COLUMN &lt;旧列名&gt; &lt;新列名&gt; &lt;新列类型&gt;</span><br><span class="line">| ALTER COLUMN &lt;列名&gt; &#123; SET DEFAULT &lt;默认值&gt; | DROP DEFAULT &#125;</span><br><span class="line">| MODIFY COLUMN &lt;列名&gt; &lt;类型&gt;</span><br><span class="line">| DROP COLUMN &lt;列名&gt;</span><br><span class="line">| RENAME TO &lt;新表名&gt;</span><br><span class="line">| CHARACTER SET &lt;字符集名&gt;</span><br><span class="line">| COLLATE &lt;校对规则名&gt; &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1-修改表名"><a href="#1-修改表名" class="headerlink" title="1) 修改表名"></a><em>1) 修改表名</em></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;旧表名&gt; RENAME [TO] &lt;新表名&gt;；</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE student RENAME TO tb_students_info;</span><br></pre></td></tr></table></figure>
+<h5 id="2-修改表字符集"><a href="#2-修改表字符集" class="headerlink" title="2) 修改表字符集"></a><em>2) 修改表字符集</em></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE 表名 [DEFAULT] CHARACTER SET &lt;字符集名&gt; [DEFAULT] COLLATE &lt;校对规则名&gt;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>DEFAULT 为可选参数，使用与否均不影响结果。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tb_students_info CHARACTER SET gb2312  DEFAULT COLLATE gb2312_chinese_ci;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-添加字段"><a href="#3-添加字段" class="headerlink" title="3) 添加字段"></a><em>3) 添加字段</em></h5><h6 id="末尾添加字段"><a href="#末尾添加字段" class="headerlink" title="末尾添加字段"></a>末尾添加字段</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;表名&gt; ADD &lt;新字段名&gt;&lt;数据类型&gt;[约束条件];</span><br></pre></td></tr></table></figure>
+<p>语法格式:</p>
+<ul>
+<li>&lt;表名&gt; 为数据表的名字；</li>
+<li>&lt;新字段名&gt; 为所要添加的字段的名字；</li>
+<li>&lt;数据类型&gt; 为所要添加的字段能存储数据的数据类型</li>
+<li>[约束条件] 是可选的，用来对添加的字段进行约束。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE student ADD age INT(4);</span><br></pre></td></tr></table></figure>
+
+<h6 id="头部加字段"><a href="#头部加字段" class="headerlink" title="头部加字段"></a>头部加字段</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;表名&gt; ADD &lt;新字段名&gt; &lt;数据类型&gt; [约束条件] FIRST;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>FIRST 关键字一般放在语句的末尾。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE student ADD stuId INT(4) FIRST;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-修改字段名称"><a href="#4-修改字段名称" class="headerlink" title="4) 修改字段名称"></a><em>4) 修改字段名称</em></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;表名&gt; CHANGE &lt;旧字段名&gt; &lt;新字段名&gt; &lt;新数据类型&gt;；</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>旧字段名：指修改前的字段名；</li>
+<li>新字段名：指修改后的字段名；</li>
+<li>新数据类型：指修改后的数据类型，如果不需要修改字段的数据类型，可以将新数据类型设置成与原来一样，但数据类型不能为空。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tb_emp1 CHANGE col1 col3 CHAR(30);</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-修改字段数据类型"><a href="#5-修改字段数据类型" class="headerlink" title="5) 修改字段数据类型"></a><em>5) 修改字段数据类型</em></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;表名&gt; MODIFY &lt;字段名&gt; &lt;数据类型&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>表名：指要修改数据类型的字段所在表的名称；</li>
+<li>字段名：指需要修改的字段；</li>
+<li>数据类型：指修改后字段的新数据类型。</li>
+</ul>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tb_emp1 MODIFY name VARCHAR(30);</span><br></pre></td></tr></table></figure>
+<h5 id="6-删除字段"><a href="#6-删除字段" class="headerlink" title="6) 删除字段"></a><em>6) 删除字段</em></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE &lt;表名&gt; DROP &lt;字段名&gt;；</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tb_emp1 DROP col2;</span><br></pre></td></tr></table></figure>
+<h4 id="11-删除表"><a href="#11-删除表" class="headerlink" title="11. 删除表"></a>11. 删除表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE [IF EXISTS] 表名1 [ ,表名2, 表名3 ...]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>表名1, 表名2, 表名3 …表示要被删除的数据表的名称。DROP TABLE 可以同时删除多个表，只要将表名依次写在后面，相互之间用逗号隔开即可。</li>
+<li>IF EXISTS 用于在删除数据表之前判断该表是否存在。如果不加 IF EXISTS，当数据表不存在时 MySQL 将提示错误，中断 SQL 语句的执行；加上 IF EXISTS 后，当数据表不存在时 SQL 语句可以顺利执行，但是会发出警告（warning）。</li>
+<li>用户必须拥有执行 DROP TABLE 命令的权限，否则数据表不会被删除。</li>
+<li>表被删除时，用户在该表上的权限不会自动删除。</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DROP TABLE tb_emp3;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -394,7 +510,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lpdll.github.io/2021/05/07/hexo_quote_image/" title="hexo在文章中添加图片">https://lpdll.github.io/2021/05/07/hexo_quote_image/</a>
+    <a href="https://lpdll.github.io/2022/03/06/mysql/%E5%9F%BA%E7%A1%80/" title="Mysql基本操作">https://lpdll.github.io/2022/03/06/mysql/%E5%9F%BA%E7%A1%80/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -416,8 +532,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/05/07/php_string_safe/" rel="next" title="字符串的二进制安全">
-                <i class="fa fa-chevron-left"></i> 字符串的二进制安全
+              <a href="/2021/05/26/elasticsearch-2/" rel="next" title="elasticsearch(二)">
+                <i class="fa fa-chevron-left"></i> elasticsearch(二)
               </a>
             
           </div>
@@ -426,8 +542,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2021/05/12/elk_filebeat_logstash/" rel="prev" title="filebeat+logstash收集json格式的日志">
-                filebeat+logstash收集json格式的日志 <i class="fa fa-chevron-right"></i>
+              <a href="/2022/03/06/mysql/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B/" rel="prev" title="Mysql数据类型">
+                Mysql数据类型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -551,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%E6%8F%92%E4%BB%B6"><span class="nav-number">1.</span> <span class="nav-text">hexo 添加图片插件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">基础操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%BF%9B%E5%85%A5mysql"><span class="nav-number">2.</span> <span class="nav-text">1. 进入mysql</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.</span> <span class="nav-text">2. 查看有哪些数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">3. 创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">4. 修改数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">6.</span> <span class="nav-text">5.删除数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">7.</span> <span class="nav-text">6. 选择数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-%E6%9F%A5%E7%9C%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E8%A1%A8"><span class="nav-number">8.</span> <span class="nav-text">7. 查看有哪些表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="nav-number">9.</span> <span class="nav-text">8. 创建表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-%E6%9F%A5%E7%9C%8B%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">10.</span> <span class="nav-text">9. 查看表结构</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E8%A1%A8%E6%A0%BC%E5%BD%A2%E5%BC%8F%E5%B1%95%E7%8E%B0%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">10.1.</span> <span class="nav-text">1) 表格形式展现表结构</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E4%BB%A5SQL%E8%AF%AD%E5%8F%A5%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%B1%95%E7%A4%BA%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">10.2.</span> <span class="nav-text">1) 以SQL语句的形式展示表结构</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="nav-number">11.</span> <span class="nav-text">10. 修改表</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%90%8D"><span class="nav-number">11.1.</span> <span class="nav-text">1) 修改表名</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E4%BF%AE%E6%94%B9%E8%A1%A8%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">11.2.</span> <span class="nav-text">2) 修改表字符集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%AE%B5"><span class="nav-number">11.3.</span> <span class="nav-text">3) 添加字段</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E6%9C%AB%E5%B0%BE%E6%B7%BB%E5%8A%A0%E5%AD%97%E6%AE%B5"><span class="nav-number">11.3.1.</span> <span class="nav-text">末尾添加字段</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%B4%E9%83%A8%E5%8A%A0%E5%AD%97%E6%AE%B5"><span class="nav-number">11.3.2.</span> <span class="nav-text">头部加字段</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E4%BF%AE%E6%94%B9%E5%AD%97%E6%AE%B5%E5%90%8D%E7%A7%B0"><span class="nav-number">11.4.</span> <span class="nav-text">4) 修改字段名称</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E4%BF%AE%E6%94%B9%E5%AD%97%E6%AE%B5%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">11.5.</span> <span class="nav-text">5) 修改字段数据类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-%E5%88%A0%E9%99%A4%E5%AD%97%E6%AE%B5"><span class="nav-number">11.6.</span> <span class="nav-text">6) 删除字段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="nav-number">12.</span> <span class="nav-text">11. 删除表</span></a></li></ol></div>
             
 
           </div>
